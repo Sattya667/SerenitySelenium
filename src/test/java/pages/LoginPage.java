@@ -1,7 +1,9 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
+import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 
@@ -10,11 +12,14 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 public class LoginPage extends PageObject{
 	
-
+	 @FindBy(id="SubmitLogin")
+	    WebElement signIN;
+	
 	public void doLogin() {
 		$("#email").sendKeys("janthird2021batch@gmail.com");
 		$("#passwd").sendKeys("Selenium12345");
-		$("#SubmitLogin").click();
+	   
+		signIN.click();
 	}
     public String accountPageIsVisible(){
         return $("div#center_column h1").getText();
