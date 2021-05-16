@@ -26,7 +26,11 @@ public class LoginPage extends PageObject{
     }
 
     public void goToContactsUsPage(){
-        $(By.linkText("Contact us")).click();
+        $(By.xpath("//div[@id='contact-link']/a[contains(text(),'Contact us')]")).click();
+    }
+    
+    public String headerTitle() {
+    	return $("div#center_column h1").getText();
     }
 
 }

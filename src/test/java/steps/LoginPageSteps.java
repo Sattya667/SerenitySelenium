@@ -24,4 +24,15 @@ public class LoginPageSteps {
 	public void loginSuccess() {
 		Assert.assertTrue(objLoginPage.accountPageIsVisible().equals("MY ACCOUNT"));
 	}
+	
+	@Step
+	public void clickContactUsLink() {
+		objLoginPage.goToContactsUsPage();
+	}
+	
+	@Step
+	public void verifyContactUsPageHeader() {
+		System.out.println(objLoginPage.headerTitle());
+		Assert.assertTrue(objLoginPage.headerTitle().equals("CUSTOMER SERVICE - CONTACT US"));
+	}
 }
